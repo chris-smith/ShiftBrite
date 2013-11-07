@@ -2,28 +2,32 @@ This is an Arduino Library for use with the ShiftBrite, an rgb led shift registe
 
 To begin use, place this folder in the libraries folder under your arduino program files.
 	
-	For Mac OS X
-		- Navigate to Applications > Arduino > libraries
+For Mac OS X
+	- Navigate to Applications > Arduino > libraries
 	
-	For Windows
-		- Navitage to C://Program Files/Arduino/libraries
+For Windows
+	- Navitage to C://Program Files/Arduino/libraries
 		
 Pinout is defined in ShiftBrite.cpp as
+```
 #define clockpin 13 
 #define enablepin 10
 #define latchpin 9
 #define datapin 11
+```
 
-Example use:
+Current implementation supports up to 4 shiftbrites wired in series.
+
+#Example use:
 
 	// define your Shiftbrite variable
 	ShiftBrite shiftbrite(2);		// this means there are 2 shiftbrites
 	shiftbrite.setColor(0, "red");		// set the first shiftbrite to the predefined red color
 	shiftbrite.setColor(1, "blue");		// set the second shiftbrite to the predefined blue color
 	Color my_color;				// declare your own color
-	Color.r = red_pixel_val;
-	Color.g = green_pixel_val;
-	Color.b = blue_pixel_val;
+	my_color.r = red_pixel_val;
+	my_color.g = green_pixel_val;
+	my_color.b = blue_pixel_val;
 	shiftbrite.setColor(0, my_color);	// set the first shiftbrite to your own color
 	shiftbrite.turnOff(1);			// turn off the second shiftbrite
 

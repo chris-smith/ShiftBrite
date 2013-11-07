@@ -237,14 +237,6 @@ Color ShiftBrite::randomColor()
   return _getColor(rand);
 }
 
-void ShiftBrite::set(int* rgb, int* desired)
-{
-  for(int i = 0; i < 3; i++)
-  {
-    rgb[i] = desired[i];
-  }
-}
-
 Color ShiftBrite::_getColor(int index)
 {
   Color rgb;
@@ -327,41 +319,5 @@ int ShiftBrite::_colorIndex(Color rgb)
  }
  return -1;
 }
-
-/*String ShiftBrite::colorName(int* rgb)
-{
-  int index = _colorIndex(rgb);
-  if(index >= 0)
-    return names[index];
-  
-  return "Not a prefined color";
-}*/
-/* 
-void loop() {
- 
-   LEDChannels[0][0] = 1023;
-   LEDChannels[0][1] = 0;
-   LEDChannels[0][2] = 0;
- 
-   LEDChannels[1][0] = 0;
-   LEDChannels[1][1] = 0;
-   LEDChannels[1][2] = 1023;
- 
-   WriteLEDArray();
-   delay(200);
- 
-   LEDChannels[0][0] = 0;
-   LEDChannels[0][1] = 0;
-   LEDChannels[0][2] = 1023;
- 
-   LEDChannels[1][0] = 1023;
-   LEDChannels[1][1] = 0;
-   LEDChannels[1][2] = 0;
- 
-   WriteLEDArray();
-   delay(200);
- 
- 
-}*/
 
 #endif

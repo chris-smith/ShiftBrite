@@ -25,7 +25,7 @@ public:
         ~ShiftBrite(); //Destructor. Currently does nothing
         void WriteLEDArray();
         void setRgbVal(int num, char channel, int val); //Set value for an rgb channel for a single shiftbrite
-        void setColor(int num, Color); //Takes in RGB array and sets the output for a single shiftbrite
+        void setColor(int num, Color); //Takes in Color and sets the output for a single shiftbrite
         void setColor(int num, String color); //sets the color to the name provided. names defined in initArrays, stored in names[]
         void setColor_rand(int num); //sets the output for a single shiftbrite to a free color
         Color getColor(); //returns an RGB array for a free color
@@ -39,8 +39,8 @@ private:
         Color randomColor();
         void setDefaults(); // Sets default number of shiftbrites
         void initArrays(); // Initializes LEDChannels[][]
-        Color _getColor(int index); // fills rgb with values for a color from index (0 <= index < numColors)
-        Color _getColor(String color); // fills rgb with values for color
+        Color _getColor(int index); // returns predefined Color at index
+        Color _getColor(String color); // returns predefined Color with name
         void defineColors(); // Defines RGB arrays for predefined colors
         int _NumLEDs; // number of shiftbrites wired in series
         int LEDChannels[4][3]; // LEDChannels[i][j] sets the color 
@@ -52,8 +52,6 @@ private:
         int SB_BlueCommand;
         boolean colors_in_use[numColors]; // true if color is being used
         int _colorIndex(Color rgb); // return index for provided color if equal to predefined
-        boolean _equal(int* rgb, int* rgb2); // true if colors are the same
-        void set(int* rgb, int* desired); // sets rgb to the desired
         
         Color empty;
 		Color colors[numColors];	// used to find colors by name

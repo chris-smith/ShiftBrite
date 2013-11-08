@@ -15,8 +15,11 @@ Pinout is defined in ShiftBrite.cpp as
 #define latchpin 9
 #define datapin 11
 ```
+This can be adjusted as you see fit.
 
-Current implementation supports up to 4 shiftbrites wired in series.
+Current implementation supports up to 4 shiftbrites wired in series. 
+
+Future work will involve improving speed, flexibility, and weight of package. Most likely, pinout will be available to be set from constructor, restriction on maximum number of shiftbrites will be removed or increased, package will possibly contain a second lightweight implementation that comes without predefined colors, random colors, etc. Open to suggestions
 
 #Example use:
 

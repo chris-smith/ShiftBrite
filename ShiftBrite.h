@@ -25,11 +25,12 @@ public:
         ~ShiftBrite(); //Destructor. Currently does nothing
         void WriteLEDArray();
         void setRgbVal(int num, char channel, int val); //Set value for an rgb channel for a single shiftbrite
+        void setColor(int num, int r, int g, int b);    //set rgb vals for shiftbrite at num
         void setColor(int num, Color); //Takes in Color and sets the output for a single shiftbrite
         void setColor(int num, String color); //sets the color to the name provided. names defined in initArrays, stored in names[]
         void setColor_rand(int num); //sets the output for a single shiftbrite to a free color
         Color getColor(); //returns an RGB array for a free color
-        void getColors(int colors[][3]); //fills colors with RGB arrays for all free colors. 
+        //void getColors(int colors[][3]); //fills colors with RGB arrays for all free colors. 
         //colors[0][0] is the number of colors available. Array elements of -1 indicate some colors are taken
         //String colorName(int* rgb); //returns the name of the color specified in rgb
         void turnOff(int);    //set the shiftbrite to off

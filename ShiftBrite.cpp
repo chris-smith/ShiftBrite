@@ -204,22 +204,18 @@ void ShiftBrite::setRgbVal(int num, char channel, int val){
   }
 }
 
-void ShiftBrite::setColor(int num, Color color){
-  int rgb[3];
-  rgb[0] = color.r;
-  rgb[1] = color.g;
-  rgb[2] = color.b;
-  if (num >= 0 && num <= _NumLEDs){
-    for(int i = 0; i < 3; i++){
-      rgb[i] = constrain(rgb[i],0,1023);
-      LEDChannels[num][i] = rgb[i];
-    }
+void ShiftBrite::setColor(int num, int r, int g, int b){
+    LEDChannels[num][0] = constrain(r, 0, 1023);
+    LEDChannels[num][1] = constrain(g, 0, 1023);
+    LEDChannels[num][2] = constrain(b, 0, 1023);
     WriteLEDArray();
-  }
 }
 
-void ShiftBrite::setColor(int num, String color){
-  
+void ShiftBrite::setColor(int num, Color color){
+  setColor(num, color.r, color.g, color.b);
+}
+
+void ShiftBrite::setColor(int num, String color){  
   Color rgb;
   rgb = _getColor(color);
   setColor(num, rgb);

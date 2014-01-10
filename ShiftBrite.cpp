@@ -283,7 +283,7 @@ Color ShiftBrite::_getColor(String color)
 Color ShiftBrite::getColor(){
   return randomColor();
 }
-
+/*
 void ShiftBrite::getColors(int colors[][3])
 {
   int num = 0;
@@ -304,6 +304,7 @@ void ShiftBrite::getColors(int colors[][3])
   }
   colors[0][0] = num;
 }
+*/
 
 int ShiftBrite::_colorIndex(Color rgb)
 {

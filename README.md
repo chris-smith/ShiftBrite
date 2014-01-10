@@ -3,7 +3,7 @@ This is an Arduino Library for use with the ShiftBrite, an rgb led shift registe
 To begin use, place this folder in the libraries folder under your arduino program files.
 	
 For Mac OS X
-	- Navigate to Applications > Arduino > libraries
+	- Navigate to Documents > Arduino > libraries
 	
 For Windows
 	- Navitage to C://Program Files/Arduino/libraries
